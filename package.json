@@ -1,0 +1,45 @@
+{
+  "name": "distiller",
+  "version": "0.1.0",
+  "description": "Extracts only the dist resources from various packages.",
+  "main": "index.js",
+  "bin": "cli.js",
+  "scripts": {
+    "test": "tap test/index.js --coverage-report=text",
+    "lint": "eslint *.js test/*.js packages/**/*.js",
+    "clean": "rm -rf dist test/output .nyc_output node_modules coverage",
+    "fresh-test": "npm run clean && npm install && npm run lint && npm run test"
+  },
+  "devDependencies": {
+    "eslint": "^3.8.1",
+    "eslint-config-xo-space": "^0.15.0",
+    "tap": "^7.1.2"
+  },
+  "dependencies": {
+    "fs-extra": "^0.30.0",
+    "meow": "^3.7.0",
+    "recursive-readdir": "^2.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/busterc/distiller.git"
+  },
+  "keywords": [
+    "dist",
+    "distill",
+    "distiller",
+    "distillery",
+    "build",
+    "cli",
+    "extract",
+    "only",
+    "filter",
+    "min"
+  ],
+  "author": "Buster Collings <busterc@gmail.com> (https://about.me/buster)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/busterc/distiller/issues"
+  },
+  "homepage": "https://github.com/busterc/distiller#readme"
+}
