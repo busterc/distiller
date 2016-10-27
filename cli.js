@@ -16,10 +16,10 @@ const cli = meow(`
 
   Options
 
-    --list, -l          lists locally defined custom packages
-    --output-dir, -o    destination for output
-    --temp-dir, -t      destination for temporary build files
-    --help, -h          shows usage help
+    -l, --list          lists locally defined custom packages
+    -o, --output-dir    destination for output
+    -t, --temp-dir      destination for temporary build files
+    -h, --help          shows usage help
 
 `, {
   alias: {
