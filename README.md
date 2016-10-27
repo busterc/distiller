@@ -61,11 +61,45 @@ distill({
   }
   console.log('carry on');
 });
+
 ```
+
+## API
+
+### distiller.distill(options, callback)
+
+- #### options
+  
+  *Required*
+  Type `object`
+
+- #### package
+  
+  *Required*
+  Type `string`
+
+  The official NPM package name.
+
+- #### outputDir
+  
+  Type: `string`
+  
+  Default: `$HOME/.distiller/dist/${package}`
+
+  The absolute path to place output files.
+
+- #### tempDir
+  
+  Type: `string`
+  
+  Default: `$HOME/.distiller/temp`
+
+  The absolute path to use for building the package. This directory is removed after execution.
+
 
 ## TODO
 
-- [ ] Document API
+- [x] Document API
 - [ ] Document custom package creation
 - [ ] More test coverage
 - [ ] Allow multiple packages on CLI
