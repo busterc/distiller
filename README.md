@@ -1,5 +1,5 @@
 # distiller [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> Extracts only the dist resources from various packages
+> Extracts only the dist files from packages
 
 ## Installation
 
@@ -18,10 +18,10 @@ $ distiller -h
 
   Options
 
-    --list, -l          lists locally defined custom packages
-    --output-dir, -o    destination for output
-    --temp-dir, -t      destination for temporary build files
-    --help, -h          shows usage help
+    -l, --list          lists locally defined custom packages
+    -o, --output-dir    destination for output
+    -t, --temp-dir      destination for temporary build files
+    -h, --help          shows usage help
 
 ```
 
@@ -38,11 +38,12 @@ $ distiller react
 Distilled into: ~/.distiller/dist/react
 
 $ tree ~/.distiller/dist/react
-~/.distiller/dist/react/                                                                                                                                                                                                 
-├── react.js                                                                                                                                                                                                  
-├── react-with-addons.js                                                                                                                                                                                                
-├── react-with-addons.min.js                                                                                                                                                                                            
-├── react.min.js                                                                                                                                                                                       
+~/.distiller/dist/react/
+├── react.js
+├── react-with-addons.js
+├── react-with-addons.min.js
+└── react.min.js
+
 ```
 
 ## Module Usage
