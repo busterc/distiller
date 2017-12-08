@@ -21,6 +21,7 @@ $ distiller -h
     -l, --list          lists locally defined custom packages
     -o, --output-dir    destination for output
     -t, --temp-dir      destination for temporary build files
+    -k, --keep-temp     do not remove the temporary directory
     -h, --help          shows usage help
 
 ```
@@ -92,10 +93,17 @@ distill({
   
   Type: `string`
   
-  Default: `$HOME/.distiller/temp`
+  Default: `$HOME/.distiller/temp/distilled-${package}`
 
-  The absolute path to use for building the package. This directory is removed after execution.
+  The absolute path to use for building the package.
 
+- #### keepTemp
+  
+  Type: `boolean`
+  
+  Default: `false`
+
+  Can prevent the `tempDir` from being removed after execution.
 
 ## TODO
 
