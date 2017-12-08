@@ -1,6 +1,6 @@
 {
   "name": "distiller",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Extracts only the dist files from packages",
   "main": "index.js",
   "bin": "cli.js",
