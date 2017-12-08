@@ -19,16 +19,30 @@ const cli = meow(`
     -l, --list          lists locally defined custom packages
     -o, --output-dir    destination for output
     -t, --temp-dir      destination for temporary build files
+    -k, --keep-temp     do not remove the temporary directory
     -h, --help          shows usage help
 
 `, {
-  alias: {
-    h: 'help',
-    l: 'list',
-    o: 'outputDir',
-    t: 'tempDir'
-  }
-});
+    flags: {
+      help: {
+        alias: 'h'
+      },
+      list: {
+        alias: 'l'
+      },
+      outputDir: {
+        alias: 'o'
+      },
+      tempDir: {
+        alias: 't'
+      },
+      keepTemp: {
+        alias: 'k',
+        type: 'boolean',
+        default: false
+      }
+    }
+  });
 
 const packagesPath = path.join(__dirname, 'packages');
 if (cli.flags.list) {
@@ -61,6 +75,8 @@ if (cli.flags.list) {
   if (cli.flags.tempDir) {
     options.tempDir = cli.flags.tempDir;
   }
+
+  options.keepTemp = Boolean(cli.flags.keepTemp) || false;
 
   options.package = cli.input[0];
   distill(options, error => {

@@ -5,7 +5,11 @@ const path = require('path');
 const recursive = require('recursive-readdir');
 
 module.exports = function (options, callback) {
-  const distPath = path.join(options.tempDir, `./node_modules/${options.package}/dist`);
+  let packageName = options.package;
+  if (packageName.indexOf('@') > -1) {
+    packageName = packageName.substring(0, packageName.indexOf('@'));
+  }
+  const distPath = path.join(options.tempDir, `./node_modules/${packageName}/dist`);
 
   recursive(distPath, (error, files) => {
     if (error) {

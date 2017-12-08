@@ -7,7 +7,8 @@ const spawn = require('child_process').spawn;
 
 const packagesRoot = 'packages';
 
-module.exports = exports = {};
+exports = {};
+module.exports = exports;
 
 exports.distill = function (options, callback) {
   if (!{}.hasOwnProperty.call(options, 'package')) {
@@ -33,6 +34,7 @@ exports.distill = function (options, callback) {
   }
 
   let tempDir = options.tempDir || process.env.DISTILLER_TEMP || `${os.homedir()}/.distiller/temp`;
+  tempDir = `${tempDir}/distilled-${packageName}`;
   fse.mkdirpSync(tempDir);
   options.tempDir = tempDir;
   const tempPackageJson = path.join(tempDir, 'package.json');
@@ -48,8 +50,8 @@ exports.distill = function (options, callback) {
       if (error) {
         return callback(error);
       }
-      // prevent deleting current working directory
-      if (process.cwd() !== path.resolve(tempDir)) {
+      // Prevent deleting current working directory
+      if (process.cwd() !== path.resolve(tempDir) && !options.keepTemp) {
         fse.removeSync(tempDir);
       }
       callback();
