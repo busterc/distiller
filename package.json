@@ -11,14 +11,14 @@
     "fresh-test": "npm run clean && npm install && npm run lint && npm run test"
   },
   "devDependencies": {
-    "eslint": "^3.8.1",
-    "eslint-config-xo-space": "^0.15.0",
-    "tap": "^7.1.2"
+    "eslint": "^4.12.1",
+    "eslint-config-xo-space": "^0.17.0",
+    "tap": "^11.0.0"
   },
   "dependencies": {
-    "fs-extra": "^0.30.0",
-    "meow": "^3.7.0",
-    "recursive-readdir": "^2.1.0"
+    "fs-extra": "^4.0.3",
+    "meow": "^4.0.0",
+    "recursive-readdir": "^2.2.1"
   },
   "repository": {
     "type": "git",
