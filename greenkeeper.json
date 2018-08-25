@@ -1,0 +1,21 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "package.json",
+        "packages/framework7-ios-min/package.json",
+        "packages/framework7-ios/package.json",
+        "packages/framework7-material-min/package.json",
+        "packages/framework7-material/package.json",
+        "packages/framework7-min/package.json",
+        "packages/jquery-min/package.json",
+        "packages/jquery-v2-min/package.json",
+        "packages/jquery-v2/package.json",
+        "packages/react-min/package.json",
+        "packages/redux-min/package.json",
+        "packages/sortablejs-min/package.json",
+        "packages/vue-min/package.json"
+      ]
+    }
+  }
+}
